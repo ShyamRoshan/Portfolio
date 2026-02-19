@@ -1,59 +1,20 @@
-:root {
-    --glass: rgba(255, 255, 255, 0.1);
-    --text: #ffffff;
-}
-
+/* Remove default margins */
 body {
-    margin: 0;
-    background-color: #000;
-    color: var(--text);
-    font-family: 'Segoe UI', sans-serif;
-    overflow-x: hidden;
+  margin: 0;
+  background: black;
+  overflow-x: hidden;
 }
 
-#hero-lightpass {
-    position: fixed;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    z-index: -1;
-    width: 100vw;
-    height: 100vh;
-    object-fit: cover;
-    opacity: 0.4; /* Watermark effect */
+/* Large scroll height to allow scrolling */
+.scroll-container {
+  height: 400vh; /* Adjust for speed of animation */
 }
 
-.content-wrapper {
-    position: relative;
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 100px 20px;
+/* Canvas stays fixed on screen */
+#animationCanvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
 }
-
-.glass-card {
-    background: var(--glass);
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(255,255,255,0.2);
-    padding: 2rem;
-    margin-bottom: 50vh; /* Spaces out content for scroll effect */
-    border-radius: 15px;
-}
-
-/* Chatbot Styling */
-#chat-widget {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    width: 300px;
-    background: #1a1a1a;
-    border-radius: 10px;
-    overflow: hidden;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-    z-index: 100;
-}
-
-#chat-header { background: #333; padding: 10px; text-align: center; }
-#chat-history { height: 200px; overflow-y: auto; padding: 10px; font-size: 0.9rem; }
-.chat-input-area { display: flex; border-top: 1px solid #444; }
-#user-input { flex: 1; border: none; padding: 10px; background: transparent; color: white; }
-#send-btn { background: #007bff; border: none; color: white; padding: 10px; cursor: pointer; }
