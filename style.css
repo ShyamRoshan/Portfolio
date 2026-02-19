@@ -1,8 +1,14 @@
+:root {
+    --glass: rgba(255, 255, 255, 0.1);
+    --text: #ffffff;
+}
+
 body {
     margin: 0;
     background-color: #000;
-    color: white;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: var(--text);
+    font-family: 'Segoe UI', sans-serif;
+    overflow-x: hidden;
 }
 
 #hero-lightpass {
@@ -10,20 +16,27 @@ body {
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
-    max-width: 100vw;
-    max-height: 100vh;
     z-index: -1;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    opacity: 0.4; /* Watermark effect */
 }
 
-.content-section {
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    padding: 0 20px;
-    background: rgba(0, 0, 0, 0.4); /* Transparency for readability */
+.content-wrapper {
+    position: relative;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 100px 20px;
+}
+
+.glass-card {
+    background: var(--glass);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255,255,255,0.2);
+    padding: 2rem;
+    margin-bottom: 50vh; /* Spaces out content for scroll effect */
+    border-radius: 15px;
 }
 
 /* Chatbot Styling */
@@ -33,43 +46,14 @@ body {
     right: 20px;
     width: 300px;
     background: #1a1a1a;
-    border: 1px solid #333;
     border-radius: 10px;
-    display: flex;
-    flex-direction: column;
     overflow: hidden;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    z-index: 100;
 }
 
-#chat-header {
-    background: #007bff;
-    padding: 10px;
-    font-weight: bold;
-}
-
-#chat-history {
-    height: 250px;
-    overflow-y: auto;
-    padding: 10px;
-    font-size: 0.9rem;
-}
-
-.chat-input-area {
-    display: flex;
-    padding: 5px;
-}
-
-input {
-    flex: 1;
-    padding: 5px;
-    background: #222;
-    border: none;
-    color: white;
-}
-
-button {
-    background: #007bff;
-    color: white;
-    border: none;
-    cursor: pointer;
-}
+#chat-header { background: #333; padding: 10px; text-align: center; }
+#chat-history { height: 200px; overflow-y: auto; padding: 10px; font-size: 0.9rem; }
+.chat-input-area { display: flex; border-top: 1px solid #444; }
+#user-input { flex: 1; border: none; padding: 10px; background: transparent; color: white; }
+#send-btn { background: #007bff; border: none; color: white; padding: 10px; cursor: pointer; }
