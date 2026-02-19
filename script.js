@@ -6,7 +6,7 @@ canvas.height = window.innerHeight;
 
 const frameCount = 240;
 const currentFrame = index => (
-  `./ezgif-frame-${index.toString().padStart(3, '0')}.jpg`
+  `.frames/ezgif-frame-${index.toString().padStart(3, '0')}.jpg`
 );
 
 const images = [];
